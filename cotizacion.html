@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <!--SLider JS Function-->
+    <script type="text/javascript" src="js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Moment-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.min.js"></script>
+    <title>Cotización</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navb">
+            <a class="navbar-brand" href="#"  >Galacticos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <li><a class="navbar-brand" href="#">
+                        <img src="img/galaxia.png" width="30" height="30" alt="">
+                    </a></li>
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cotizacion.html">Cotizacion </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacto.html">Contacto </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    
+          <!--Cambiar Imagen-->
+          
+    </header>
+    <section id = "contenido">
+        <h1>Cotización</h1>
+        <select class="form-select" aria-label="Disabled select example" disabled>
+            <option selected>León Gto MX</option>
+        </select>
+        <h5>Selecciona el Destino Turístico</h5>
+        <select class="form-select" id="estados" name="Estado" aria-label="Default select example" onchange="if(document.images) document.images['cambio'].src='img/estados/'+this.options[this.selectedIndex].value+'.jpg';">
+            <option selected>Ninguno</option>
+            <option value="1">Aguascalientes</option>
+            <option value="2">Baja California</option>
+            <option value="3">Baja California Sur</option>
+            <option value="4">Campeche</option>
+            <option value="5">CDMX</option>
+            <option value="6">Chiapas</option>
+            <option value="7">Chihuahua</option>
+            <option value="8">Coahuila</option>
+            <option value="9">Colima</option>
+            <option value="10">Durango</option>
+            <option value="11">Edo Mexico</option>
+            <option value="12">Guanajuato</option>
+            <option value="13">Guerrero</option>
+            <option value="14">Hidalgo</option>
+            <option value="15">Jalisco</option>
+            <option value="16">Michoacan</option>
+            <option value="17">Morelos</option>
+            <option value="18">Nayarit</option>
+            <option value="19">Nuevo Leon</option>
+            <option value="20">Oaxaca</option>
+            <option value="21">Puebla</option>
+            <option value="22">Queretaro</option>
+            <option value="23">Quintana Roo</option>
+            <option value="24">San Luis Potosi</option>¿
+            <option value="25">Sinaloa</option>
+            <option value="26">Sonora</option>
+            <option value="27">Tabasco</option>
+            <option value="28">Tamaulipas</option>
+            <option value="29">Tlaxcala</option>
+            <option value="30">Veracruz</option>
+            <option value="31">Yucatan</option>
+            <option value="32">Zacatecas</option>
+          </select>
+          <h5>Numero de Adultos</h5>
+          <select id="adultos">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+          </select>
+          <h5>Numero de niños</h5>
+          <select id="niños">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+          </select>
+          <h5>Dias de estancia</h5>
+          <Select id="dias">
+              <option value="1">1 día</option>
+              <option value="2">2 días</option>
+              <option value="3">3 días</option>
+              <option value="4">4 días</option>
+              <option value="5">5 días</option>
+              <option value="6">6 días</option>
+              <option value="7">7 días</option>
+          </Select>
+          <h5>Imagen del sitio</h5>
+
+          <div>
+              <img id="img1" name="cambio" src="img/estados/1.jpg" alt="aguascalientes" height="300">
+          </div>
+          
+          <h5></h5>
+          <a href="#" id="calculo" class="btn btn-dark" onclick="myFunction()">Calcular Precio</a>
+          <script>
+            function myFunction(){
+                var distancia, adulto, niño, dias;
+                distancia = document.getElementById("estados").value;
+                adulto = document.getElementById("adultos").value;
+                niños = document.getElementById("niños").value;
+                dias = document.getElementById("dias").value;
+
+                var dis = parseFloat(distancia);
+                var adulto1 = parseFloat(adulto);
+                var niño1 = parseFloat(niño);
+                var dias1 = parseFloat(dias);
+                
+                // var kmtotal = dis * 150;
+                // var totaladultos = adulto1 * 100;
+                // var totalniños = niño1 * 50;
+                // var total = (totalniños + totaladultos) * dias1;
+                // var totalfinal = kmtotal + total;
+                console.log(totalfinal);
+
+                // kmtotal = dis * 150;
+                // totaladultos = adulto1 * 100;
+                // totalniños = niño1 * 50;
+                // total = (totaladultos + totalniños) * dias1;
+                // totalfinal = kmtotal + total;
+                // console.log(totalfinal)
+                
+                }
+        </script>
+
+        <div class="clearfix"></div>
+    </section>
+    <footer>Galacticos &copy;</footer>
+</body>
+</html>
